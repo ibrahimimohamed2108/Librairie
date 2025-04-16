@@ -14,4 +14,10 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     // Rechercher des livres par titre ou auteur
     @Query("SELECT b FROM Book b WHERE b.title LIKE %:query% OR b.author LIKE %:query%")
     List<Book> searchBooks(@Param("query") String query);
+
+
+    List<Book> findByAuthor(String author);
+    List<Book> getAllByTitle(String title);
+
+    void deleteByTitle(String title);
 }
