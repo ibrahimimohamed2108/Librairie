@@ -86,4 +86,8 @@ public class BookController {
 
 
     }
+
+    public BookService getBookService() {
+        return bookService;
+    }
 }
